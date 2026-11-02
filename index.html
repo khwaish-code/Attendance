@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff0f6">
+    <title>Our Little Love Diary 💗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-heart heart-one">♡</div>
+    <div class="background-heart heart-two">♡</div>
+
+    <header class="navbar">
+        <div class="brand">♡ Our Little Love Diary</div>
+        <button class="today-btn" id="todayBtn">Today ✨</button>
+    </header>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div>
+                <span class="eyebrow">A LITTLE SPACE FOR TWO HEARTS</span>
+                <h1>Our Little<br><em>Love Diary</em> 💗</h1>
+                <p>Every day is sweeter when we show up for each other.</p>
+                <div class="date-pill" id="todayDate"></div>
+            </div>
+            <div class="hero-decoration">
+                <span>♥</span>
+                <small>you + me</small>
+            </div>
+        </section>
+
+        <!-- PROFILES -->
+        <section class="profiles">
+            <article class="profile-card pink-card">
+                <div class="profile-top">
+                    <div class="avatar">♡</div>
+                    <span>PARTNER 01</span>
+                </div>
+
+                <label for="name1">Partner's name</label>
+                <input id="name1" maxlength="32" placeholder="Partner 1">
+
+                <p class="availability-label">Today's availability</p>
+
+                <div class="choices">
+                    <button class="choice" data-partner="1" data-value="available">
+                        Available ❤️
+                    </button>
+                    <button class="choice" data-partner="1" data-value="unavailable">
+                        Unavailable 💔
+                    </button>
+                </div>
+            </article>
+
+            <article class="profile-card lavender-card">
+                <div class="profile-top">
+                    <div class="avatar">♡</div>
+                    <span>PARTNER 02</span>
+                </div>
+
+                <label for="name2">Partner's name</label>
+                <input id="name2" maxlength="32" placeholder="Partner 2">
+
+                <p class="availability-label">Today's availability</p>
+
+                <div class="choices">
+                    <button class="choice" data-partner="2" data-value="available">
+                        Available ❤️
+                    </button>
+                    <button class="choice" data-partner="2" data-value="unavailable">
+                        Unavailable 💔
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <!-- TODAY RESULT -->
+        <section class="today-result">
+            <div class="result-emoji" id="resultEmoji">💞</div>
+            <div class="result-text">
+                <span class="eyebrow">TODAY'S LITTLE UPDATE</span>
+                <h2 id="resultTitle">A day to write together</h2>
+                <p id="resultDescription">Choose availability for both partners.</p>
+            </div>
+            <button class="primary-btn" id="saveTodayBtn">
+                Save today's love ♡
+            </button>
+        </section>
+
+        <!-- CALENDAR -->
+        <section class="section-heading">
+            <div>
+                <span class="eyebrow">OUR DAYS, IN BLOOM</span>
+                <h2>Little Love Calendar</h2>
+                <p>Tap any date to add or edit attendance.</p>
+            </div>
+
+            <div class="month-navigation">
+                <button id="prevMonth">‹</button>
+                <strong id="monthLabel"></strong>
+                <button id="nextMonth">›</button>
+            </div>
+        </section>
+
+        <section class="calendar-card">
+            <div class="legend">
+                <span><i class="dot both"></i> Both present</span>
+                <span><i class="dot one"></i> One present</span>
+                <span><i class="dot holiday"></i> Holiday</span>
+                <span><i class="dot empty"></i> Not recorded</span>
+            </div>
+
+            <div class="calendar-grid weekdays">
+                <span>Sun</span>
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+            </div>
+
+            <div class="calendar-grid" id="calendar"></div>
+
+            <p class="calendar-footer">♡ One little day at a time.</p>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="section-heading">
+            <div>
+                <span class="eyebrow">THE LOVE NOTES, COUNTED</span>
+                <h2>Our Attendance Story</h2>
+                <p>Shared holidays are excluded from percentages.</p>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <article class="stat-card stat-pink">
+                <span id="statName1">PARTNER 01</span>
+                <h2 id="percent1">—</h2>
+                <p>Attendance</p>
+                <div class="progress">
+                    <div id="progress1"></div>
+                </div>
+                <small id="counts1">No records yet</small>
+            </article>
+
+            <article class="stat-card stat-purple">
+                <span id="statName2">PARTNER 02</span>
+                <h2 id="percent2">—</h2>
+                <p>Attendance</p>
+                <div class="progress">
+                    <div id="progress2"></div>
+                </div>
+                <small id="counts2">No records yet</small>
+            </article>
+
+            <article class="stat-card stat-peach">
+                <span>TOGETHER 💗</span>
+                <h2 id="combinedPercent">—</h2>
+                <p>Both-present days</p>
+                <div class="progress">
+                    <div id="combinedProgress"></div>
+                </div>
+                <small id="combinedCounts">No records yet</small>
+            </article>
+        </section>
+
+        <!-- MONTHLY REPORT -->
+        <section class="monthly-card">
+            <span class="eyebrow">A CHAPTER AT A TIME</span>
+            <h2>Monthly Love Note 💌</h2>
+
+            <p id="monthlySummary">
+                Your monthly story will appear here.
+            </p>
+
+            <div class="monthly-stats">
+                <div>
+                    <strong id="bothDays">0</strong>
+                    <span>Both present</span>
+                </div>
+                <div>
+                    <strong id="oneDays">0</strong>
+                    <span>One present</span>
+                </div>
+                <div>
+                    <strong id="holidayDays">0</strong>
+                    <span>Holidays</span>
+                </div>
+                <div>
+                    <strong id="totalDays">0</strong>
+                    <span>Recorded days</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATA MANAGEMENT -->
+        <section class="section-heading">
+            <div>
+                <span class="eyebrow">KEEP OUR MEMORIES SAFE</span>
+                <h2>Diary & Data</h2>
+                <p>Manage your attendance records and backups.</p>
+            </div>
+        </section>
+
+        <section class="data-card">
+            <h3>🔐 A little privacy note</h3>
+            <p>
+                This diary does not have secure accounts or password protection.
+                Your information is saved in this browser only. It does not
+                automatically synchronize between your devices.
+            </p>
+
+            <div class="data-buttons">
+                <button class="secondary-btn" id="exportBtn">
+                    ↓ Export JSON Backup
+                </button>
+
+                <label class="secondary-btn import-label">
+                    ↑ Import JSON Backup
+                    <input type="file" id="importFile" accept=".json,application/json">
+                </label>
+
+                <button class="danger-btn" id="resetBtn">
+                    Reset Diary
+                </button>
+            </div>
+
+            <small>
+                To share your diary, export the JSON file and send it to your
+                partner. Importing replaces the current diary after confirmation.
+                Export both copies before importing if you want to preserve them.
+            </small>
+        </section>
+
+        <footer>
+            <div>♥</div>
+            Made with a little extra love, just for two.
+            <small>OUR LITTLE LOVE DIARY · <span id="year"></span></small>
+        </footer>
+
+    </main>
+
+    <!-- EDIT DATE DIALOG -->
+    <dialog id="editDialog">
+        <div class="dialog-header">
+            <div>
+                <span class="eyebrow">A PAGE IN OUR STORY</span>
+                <h2 id="editDateTitle">Edit Attendance</h2>
+            </div>
+            <button id="closeDialog" class="close-btn">×</button>
+        </div>
+
+        <p>Choose availability for both partners.</p>
+
+        <label id="editLabel1" for="edit1">Partner 1</label>
+        <select id="edit1">
+            <option value="available">Available ❤️</option>
+            <option value="unavailable">Unavailable 💔</option>
+        </select>
+
+        <label id="editLabel2" for="edit2">Partner 2</label>
+        <select id="edit2">
+            <option value="available">Available ❤️</option>
+            <option value="unavailable">Unavailable 💔</option>
+        </select>
+
+        <div class="dialog-buttons">
+            <button class="danger-btn" id="deleteBtn">Delete Day</button>
+            <button class="primary-btn" id="saveEditBtn">Save Attendance ♡</button>
+        </div>
+    </dialog>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
